@@ -1,0 +1,25 @@
+import {Component, OnInit} from '@angular/core';
+import {NotesComponent} from '../notes.component';
+import {Note} from '../note.model';
+
+@Component({
+  selector: 'app-note-page',
+  templateUrl: './note-page.component.html',
+  styleUrls: ['./note-page.component.css']
+})
+export class NotePageComponent implements OnInit {
+  title: string;
+  text: string;
+  private Note: Note;
+
+
+  constructor(private notesComp: NotesComponent) {
+  }
+
+  ngOnInit(): void {
+  }
+
+  saveBtn(title: string, text: string): void {
+    this.notesComp.addNote(new Note(title, text));
+  }
+}
