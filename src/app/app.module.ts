@@ -12,9 +12,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  { path: 'note-list', component: NoteListComponent },
-  { path: 'note-page', component: NotePageComponent },
-  { path: 'log-in', component: LogInComponent },
+  {path: 'note-list', component: NoteListComponent},
+  {path: 'note-page', component: NotePageComponent},
+  {path: 'log-in', component: LogInComponent},
+  {path: 'log-in', component: LogInComponent}
 ];
 
 @NgModule({
