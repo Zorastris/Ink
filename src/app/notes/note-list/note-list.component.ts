@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NotesComponent} from '../notes.component';
 
 @Component({
@@ -11,7 +11,8 @@ export class NoteListComponent implements OnInit {
   text: string;
 
 
-  constructor(public notesComp: NotesComponent) { }
+  constructor(public notesComp: NotesComponent) {
+  }
 
   ngOnInit(): void {
   }

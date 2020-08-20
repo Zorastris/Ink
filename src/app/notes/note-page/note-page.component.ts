@@ -10,7 +10,6 @@ import {Note} from '../note.model';
 export class NotePageComponent implements OnInit {
   title: string;
   text: string;
-  private Note: Note;
 
 
   constructor(private notesComp: NotesComponent) {
@@ -21,5 +20,9 @@ export class NotePageComponent implements OnInit {
 
   saveBtn(title: string, text: string): void {
     this.notesComp.addNote(new Note(title, text));
+  }
+
+  delBtn(): void {
+
   }
 }

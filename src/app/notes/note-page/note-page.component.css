@@ -1,2 +1,16 @@
+.btn{
+  margin: 10px;
+
+}
+#brand{
+  font-size: 300%;
+  color: darkslateblue;
+  font-family: "Helvetica Neue";
+  font-style: italic;
+
+}
+#sidebar{
+  border-color: darkslateblue;
 
 
+}

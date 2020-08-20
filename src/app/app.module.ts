@@ -8,15 +8,13 @@ import {NotesComponent} from './notes/notes.component';
 import {NotePageComponent} from './notes/note-page/note-page.component';
 import {FormsModule} from '@angular/forms';
 import {HeaderComponent} from './header/header.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {environment} from '../environments/environment';
+import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth';
+import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [
-  {path: 'note-list', component: NoteListComponent},
-  {path: 'note-page', component: NotePageComponent},
-  {path: 'log-in', component: LogInComponent},
-  {path: 'log-in', component: LogInComponent}
-];
 
 @NgModule({
   declarations: [
@@ -25,13 +23,17 @@ const routes: Routes = [
     LogInComponent,
     NotePageComponent,
     NotesComponent,
-    HeaderComponent
+    HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [NotesComponent],
   bootstrap: [AppComponent]

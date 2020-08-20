@@ -1,21 +1,19 @@
 #note-desc{
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  width: inherit;
+  text-overflow: ellipsis;
 }
 #note-desc:hover{
   overflow: visible;
   white-space: normal;
 }
-#brand{
-  font-size: 300%;
-  color: darkslateblue;
-  font-family: "Helvetica Neue";
-  font-style: italic;
-
-}
 #sidebar{
   border-color: darkslateblue;
 
 
+}
+#brand{
+  width: inherit;
+  height: auto;
 }

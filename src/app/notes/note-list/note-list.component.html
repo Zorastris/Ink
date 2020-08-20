@@ -1,14 +1,9 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
-      <p></p>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-1">
 
       <ul class="list-group" id="sidebar" style="list-style-type:none;">
-        <li class="list-group-item"><a href="#" id="brand">Ink</a></li>
+        <li id="brand" class="list-group-item"><img src="assets\images\logo.png" ></li>
         <li class="list-group-item"><a routerLink="/note-page" routerLinkActive="active">Note with Text Only</a></li>
         <li class="list-group-item"><a href="#">Note with Image</a></li>
         <li class="list-group-item"><a href="#">Archived</a></li>
@@ -16,14 +11,10 @@
       </ul>
     </div>
     <div class="col-md-10 list-group">
-      <!--      <div class="col-md-1">-->
-
-      <!--        -->
-      <!--      </div>-->
       <dl class="list-group" *ngFor="let note of notesComp.notes">
         <div id="note-block" class="col-xs-offset-1 col-md-10 list-group-item">
           <dt class=" list-group-item-lg" id="item">
-            <input type="checkbox">
+            <input type="checkbox" style="margin: 23px">
             <a class="list-group-item-lg" id="note-title" routerLink="/note-page" routerLinkActive="active">{{note.title}}</a>
           </dt>
           <dd id="note-desc" class="d-inline-block text-truncate list-group-item">{{note.text}}</dd>
