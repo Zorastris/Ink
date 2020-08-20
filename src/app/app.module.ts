@@ -15,6 +15,18 @@ import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 
+const config = {
+  apiKey: 'AIzaSyBTUV5760Wkn8J1D2Eyiif0EGvph7TfIYI',
+  authDomain: 'ink-note.firebaseapp.com',
+  databaseURL: 'https://ink-note.firebaseio.com',
+  projectId: 'ink-note',
+  storageBucket: 'ink-note.appspot.com',
+  messagingSenderId: '1019291825311',
+  appId: '1:1019291825311:web:a7f3151b9518bbd316deaa',
+  measurementId: 'G-5LM98RKN30'
+
+
+};
 
 @NgModule({
   declarations: [

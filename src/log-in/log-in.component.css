@@ -1,11 +1,10 @@
-body,html{
-  height:100%;
 
-}
-.form-group{
+.form-group {
   vertical-align: middle;
 }
-.main-div{
-top: 50%;
+
+.main-div {
+  top: 50%;
   margin-top: 10%;
 }
+

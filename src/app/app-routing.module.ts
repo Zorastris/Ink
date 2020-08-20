@@ -7,8 +7,8 @@ import {NotePageComponent} from './notes/note-page/note-page.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'log-in', pathMatch: 'full', component: LogInComponent},
-  // {path: '**', component: LogInComponent},
+  {path: '', redirectTo: 'log-in', pathMatch: 'full'},
+  {path: 'log-in', component: LogInComponent},
   {path: 'note-list', component: NoteListComponent},
   {path: 'note-page', component: NotePageComponent}
 
