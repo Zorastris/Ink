@@ -3,7 +3,7 @@
     <div class="col-md-1">
 
       <ul class="list-group" id="sidebar" style="list-style-type:none;">
-        <li class="list-group-item"><a href="#" id="brand">Ink</a></li>
+        <li class="list-group-item"><img id="brand" src="assets\images\logo.png" routerLink="/note-list" routerLinkActive="active"></li>
         <li class="list-group-item"><a routerLink="/note-page" routerLinkActive="active">Note with Text Only</a></li>
         <li class="list-group-item"><a href="#">Note with Image</a></li>
         <li class="list-group-item"><a href="#">Archived</a></li>
@@ -31,7 +31,7 @@
   <div class="col-md-1">
   </div>
   <div class="col-md-10">
-    <button class="btn" style="background-color: cornflowerblue" (click)="saveBtn(title,text)">Save</button>
+    <button class="btn" style="background-color: cornflowerblue" (click)="saveBtn(title,text)" routerLink="/note-list" routerLinkActive="active">Save</button>
     <button class="btn" style="background-color: red" (click)="delBtn()">Delete</button>
   </div>
   <div class="col-md-1">

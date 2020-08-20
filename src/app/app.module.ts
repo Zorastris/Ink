@@ -14,6 +14,7 @@ import {environment} from '../environments/environment';
 import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
+import {NotesService} from './service/notes.service';
 
 const config = {
   apiKey: 'AIzaSyBTUV5760Wkn8J1D2Eyiif0EGvph7TfIYI',
@@ -45,9 +46,11 @@ const config = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [NotesComponent],
+  providers: [
+    NotesComponent,
+    NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

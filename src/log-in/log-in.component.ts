@@ -26,7 +26,7 @@ export class LogInComponent implements OnInit {
 
   }
 
-  // Comman Method to Show Message and Hide after 2 seconds
+  // Common Method to Show Message and Hide after 2 seconds
   showMessage(type, msg) {
     this.responseMessageType = type;
     this.responseMessage = msg;
@@ -66,6 +66,7 @@ export class LogInComponent implements OnInit {
         console.log(res);
         this.showMessage("success", "Successfully Logged In!");
         this.isUserLoggedIn();
+        this.logBtn();
       }, err => {
         this.showMessage("danger", err.message);
       });

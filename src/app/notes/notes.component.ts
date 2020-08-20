@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Note} from './note.model';
+import {NotesService} from '../service/notes.service';
 
 @Component({
   selector: 'app-notes',
@@ -26,7 +27,7 @@ export class NotesComponent implements OnInit {
       'Pellentesque elementum neque ac felis consectetur, nec iaculis felis dapibus. Donec quis lacus ligula. Nulla facilisis semper purus, at luctus orci tristique ac. Duis eleifend porttitor dolor, at laoreet massa luctus ac. Nulla faucibus purus vitae risus lobortis vehicula. Praesent ut ipsum eget nisl facilisis rutrum id in tellus. Nulla fringilla ex in nibh ullamcorper sodales. Donec iaculis est eu commodo semper. Duis vulputate ornare augue sed porta. Sed blandit rutrum varius. Curabitur tempor a nibh ac tincidunt. Phasellus eget blandit eros, bibendum pretium massa. Morbi eget ante ex. Curabitur vitae libero in enim dapibus vulputate. '),
   ];
 
-  constructor() {
+  constructor(private noteService: NotesService) {
   }
 
   ngOnInit(): void {
@@ -36,4 +37,17 @@ export class NotesComponent implements OnInit {
 
     this.notes.push(note1);
   }
+
+  onSubmit() {
+    this.noteService.form.value.coffeeOrder = this.coffeeOrder;
+    let data = this.noteService.form.value;
+
+    this.noteService.createNotes(data)
+      .then(res => {
+        /*do something here....
+        maybe clear the form or give a success message*/
+      });
+  }
+
+
 }

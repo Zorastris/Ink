@@ -19,7 +19,14 @@ export class NotePageComponent implements OnInit {
   }
 
   saveBtn(title: string, text: string): void {
-    this.notesComp.addNote(new Note(title, text));
+    if(title === "" ){
+      title = "Untitled Note";
+      this.notesComp.addNote(new Note(title, text));
+    }else if (title !== "" && text !== ""){
+      this.notesComp.addNote(new Note(title, text));
+    }
+
+
   }
 
   delBtn(): void {

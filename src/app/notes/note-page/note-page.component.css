@@ -1,14 +1,11 @@
 .btn{
   margin: 10px;
-
 }
 #brand{
-  font-size: 300%;
-  color: darkslateblue;
-  font-family: "Helvetica Neue";
-  font-style: italic;
-
+  width: 100%;
+  height: 100%;
 }
+
 #sidebar{
   border-color: darkslateblue;
 
