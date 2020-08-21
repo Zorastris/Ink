@@ -13,13 +13,14 @@
     <div class="col-md-10 list-group">
       <dl class="list-group" *ngFor="let note of noteOrders">
         <div id="note-block" class="col-xs-offset-1 col-md-10 list-group-item">
-          <input type="checkbox">
-          <dt class=" list-group-item-lg" id="item">
 
+          <dt class=" list-group-item-lg" id="item">
+            <input type="checkbox">
             <a class="list-group-item-lg" id="note-title" routerLink="/note-page"
                routerLinkActive="active">{{ note.payload.doc.data().noteTitle }}</a>
           </dt>
-          <dd id="note-desc" class="d-inline-block text-truncate list-group-item">{{ note.payload.doc.data().noteBody }}</dd>
+          <dd id="note-desc"
+              class="d-inline-block text-truncate list-group-item">{{ note.payload.doc.data().noteBody }}</dd>
         </div>
       </dl>
 
