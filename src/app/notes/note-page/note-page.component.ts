@@ -13,7 +13,7 @@ export class NotePageComponent implements OnInit {
   text: string;
 
 
-  constructor(public notesComp: NotesComponent, public notesSer: NotesService) {
+  constructor(public notesComp: NotesComponent, public notesService: NotesService) {
   }
 
   ngOnInit(): void {
