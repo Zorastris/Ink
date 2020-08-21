@@ -6,7 +6,7 @@ import {NoteListComponent} from './notes/note-list/note-list.component';
 import {LogInComponent} from '../log-in/log-in.component';
 import {NotesComponent} from './notes/notes.component';
 import {NotePageComponent} from './notes/note-page/note-page.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HeaderComponent} from './header/header.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -47,6 +47,7 @@ const config = {
     AngularFireAuthModule,
     RouterModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     NotesComponent,

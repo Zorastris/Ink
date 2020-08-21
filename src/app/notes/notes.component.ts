@@ -38,8 +38,14 @@ export class NotesComponent implements OnInit {
     this.notes.push(note1);
   }
 
+  createNote = [];addCoffee = note => this.createNote.push(note);removeCoffee = Note => {
+    let index = this.createNote.indexOf(Note);
+    if (index > -1) this.createNote.splice(index, 1);
+  };
+
+
   onSubmit() {
-    this.noteService.form.value.coffeeOrder = this.coffeeOrder;
+    this.noteService.form.value.createNote = this.createNote;
     let data = this.noteService.form.value;
 
     this.noteService.createNotes(data)

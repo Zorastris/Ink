@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NotesComponent} from '../notes.component';
 import {Note} from '../note.model';
+import {NotesService} from '../../service/notes.service';
 
 @Component({
   selector: 'app-note-page',
@@ -12,7 +13,7 @@ export class NotePageComponent implements OnInit {
   text: string;
 
 
-  constructor(private notesComp: NotesComponent) {
+  constructor(public notesComp: NotesComponent, public notesSer: NotesService) {
   }
 
   ngOnInit(): void {
