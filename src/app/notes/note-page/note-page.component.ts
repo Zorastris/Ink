@@ -11,7 +11,8 @@ import {NotesService} from '../../service/notes.service';
 export class NotePageComponent implements OnInit {
   title: string;
   text: string;
-
+  userId: number;
+  noteId: number;
 
   constructor(public notesComp: NotesComponent, public notesService: NotesService) {
   }
@@ -19,6 +20,8 @@ export class NotePageComponent implements OnInit {
   ngOnInit(): void {
     this.getNotes();
   }
+
+
 
   saveBtn(): void {
     if (this.title === '') {
@@ -29,15 +32,10 @@ export class NotePageComponent implements OnInit {
     }
   }
 
-  deleteBtn(): void {
-
-
-  }
-
   deleteNote = data => this.notesService.deleteNote(data);
 
-  noteOrders;
+  noteList;
 
   getNotes = () => this.notesService.getNotes()
-    .subscribe(res => (this.noteOrders = res));
+    .subscribe(res => (this.noteList = res));
 }

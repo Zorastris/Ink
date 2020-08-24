@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { FormControl, FormGroup } from "@angular/forms";
+import {LogInComponent} from '../../log-in/log-in.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,12 @@ export class NotesService {
   constructor(private firestore: AngularFirestore) {
   }
 
+
   form = new FormGroup({
     noteTitle: new FormControl(''),
     noteBody: new FormControl(''),
-    noteOwner: new FormControl('')
+    noteOwner: new FormControl(''),
+    noteId: new FormControl('')
   })
   createNewNote(data) {
     return new Promise<any>((resolve, reject) =>{

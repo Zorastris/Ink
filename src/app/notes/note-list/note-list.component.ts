@@ -5,7 +5,10 @@ import {NotesService} from '../../service/notes.service';
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.css']
+  styleUrls: ['./note-list.component.css'],
+  providers:[
+    NotesComponent
+  ]
 })
 export class NoteListComponent implements OnInit {
   title: string;

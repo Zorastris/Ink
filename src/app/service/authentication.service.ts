@@ -23,6 +23,7 @@ export class AuthenticationService {
   }
 
   async login(email: string, password: string) {
+    debugger
     return await this.angularFireAuth.signInWithEmailAndPassword(email, password);
   }
 

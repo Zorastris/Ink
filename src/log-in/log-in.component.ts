@@ -5,7 +5,10 @@ import {AuthenticationService} from '../app/service/authentication.service';
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  styleUrls: ['./log-in.component.css'],
+  providers:[
+    AuthenticationService
+  ]
 })
 export class LogInComponent implements OnInit {
   selectedVal: string;
@@ -60,10 +63,11 @@ export class LogInComponent implements OnInit {
 
   // Login user with  provided Email/ Password
   loginUser() {
+    debugger
     this.responseMessage = "";
     this.authService.login(this.emailInput, this.passwordInput)
       .then(res => {
-        console.log(res);
+        console.log("response " + res);
         this.showMessage("success", "Successfully Logged In!");
         this.isUserLoggedIn();
         this.logBtn();
@@ -77,7 +81,7 @@ export class LogInComponent implements OnInit {
     this.authService.register(this.emailInput, this.passwordInput)
       .then(res => {
 
-        // Send Varification link in email
+        // Send Verification link in email
         this.authService.sendEmailVerification().then(res => {
           console.log(res);
           this.isForgotPassword = false;
