@@ -11,7 +11,8 @@
         <li class="list-group-item"><a routerLink="/log-in" routerLinkActive="active">Logout</a></li>
       </ul>
     </div>
-    <form class="col-md-10" [formGroup]="notesService.form" (ngSubmit)="notesComp.onSubmit()">
+    <form class="col-md-10" [formGroup]="notesService.form" *ngFor="let note of noteOrders.payload.doc.data().noteOrders"
+          (ngSubmit)="notesComp.onSubmit()">
 
       <label for="title" style="font-size: medium">Title</label>
       <input
@@ -19,14 +20,18 @@
         id="title"
         class="form-control"
         formControlName="noteTitle"
+        [(ngModel)]="title"
+        placeholder="{{note.payload.doc.data().noteTitle}}"
       >
       <label for="body" style="font-size: medium">Text</label>
-      <textarea id="body" class="form-control" formControlName="noteBody" rows="10" style="resize: vertical"></textarea>
+      <textarea id="body" class="form-control" formControlName="noteBody" rows="10" style="resize: vertical" [(ngModel)]="text" >{{ note.payload.doc.data().noteBody}}</textarea>
       <div>
         <button class="waves-effect waves-light btn" style="background-color: lightskyblue"
-                (click)="notesComp.onSubmit()" routerLink="/note-list" routerLinkActive="active">Save
+                (click)="saveBtn()" routerLink="/note-list" routerLinkActive="active">Save
         </button>
-        <button class="btn" style="background-color: red" (click)="deleteOrder(note)">Delete</button>
+        <button class="btn" style="background-color: red" [hidden]="note.payload.doc.data().completed"
+                (click)="deleteNote(note)">Delete
+        </button>
       </div>
 
     </form>

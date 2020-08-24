@@ -20,6 +20,7 @@ export class NoteListComponent implements OnInit {
   }
 
   noteOrders;
+
   getNotes = () => {
     this.notesService.getNotes().subscribe
     (res => (this.noteOrders = res));

@@ -17,20 +17,27 @@ export class NotePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getNotes();
   }
 
-  saveBtn(title: string, text: string): void {
-    if(title === "" ){
-      title = "Untitled Note";
-      this.notesComp.addNote(new Note(title, text));
-    }else if (title !== "" && text !== ""){
-      this.notesComp.addNote(new Note(title, text));
+  saveBtn(): void {
+    if (this.title === '') {
+      this.title = 'Untitled Note';
+      this.notesComp.onSubmit();
+    } else if (this.title !== '' && this.text !== '') {
+      this.notesComp.onSubmit();
     }
+  }
+
+  deleteBtn(): void {
 
 
   }
 
-  delBtn(): void {
+  deleteNote = data => this.notesService.deleteNote(data);
 
-  }
+  noteOrders;
+
+  getNotes = () => this.notesService.getNotes()
+    .subscribe(res => (this.noteOrders = res));
 }

@@ -13,19 +13,33 @@ export class NotesService {
   form = new FormGroup({
     noteTitle: new FormControl(''),
     noteBody: new FormControl(''),
-    createNote: new FormControl(''),
-    completed: new FormControl(false)
+    noteOwner: new FormControl('')
   })
-  getNotes() {
-    return this.firestore.collection("notes").snapshotChanges();
-  }
-
-  createNotes(data) {
+  createNewNote(data) {
     return new Promise<any>((resolve, reject) =>{
       this.firestore
-        .collection("notes")
+        .collection("library")
         .add(data)
         .then(res => {}, err => reject(err));
     });
+  }
+
+  updateNote(data) {
+    return this.firestore
+      .collection("library")
+      .doc(data.payload.doc.id)
+      .set({ completed: true }, { merge: true });
+  }
+
+
+
+  getNotes() {
+    return this.firestore.collection("library").snapshotChanges();
+  }
+
+
+
+  deleteNote(data) {
+    return this.firestore.collection("library").doc(data.payload.doc.id).delete();
   }
 }

@@ -27,25 +27,26 @@ export class NotesComponent implements OnInit {
   }
 
 
-  createNote = [];
-  addNote = note => this.createNote.push(note);
+  newNote = [];
+
+
+  addNote = note => this.newNote.push(note);
+
   removeNote = Note => {
-    let index = this.createNote.indexOf(Note);
+    let index = this.newNote.indexOf(Note);
     if (index > -1) {
-      this.createNote.splice(index, 1);
+      this.newNote.splice(index, 1);
     }
   };
 
 
   onSubmit() {
-    this.noteService.form.value.createNote = this.createNote;
+    this.noteService.form.value.newNote = this.newNote;
     let data = this.noteService.form.value;
-
-    this.noteService.createNotes(data)
-      .then(res => {
-        /*do something here....
-        maybe clear the form or give a success message*/
-      });
+    this.noteService.createNewNote(data).then(res => {
+      /*do something here....
+      maybe clear the form or give a success message*/
+    });
   }
 
 
